@@ -1,0 +1,14 @@
+
+<div class="hero-edit">
+  <h5>All Heroes in array</h5>
+  <ul>
+    <li *ngFor="let hero of hreoesArray" [class.selected]="hero === clickedHero">
+      <button type="button" (click)="onClick(hero)" [class.selected] = "hero == clickedHero">
+        id : {{ hero.id }} and Name : {{ hero.name }}
+      </button>
+    </li>
+  </ul>
+</div>
+
+
+<app-hero-detail [clickedHero] = "clickedHero"></app-hero-detail>
