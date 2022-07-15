@@ -1,11 +1,11 @@
-<div class="hero-detail" *ngIf="clickedHero">
-  <h5>{{ clickedHero.name }} Details</h5>
-  id : {{ clickedHero.id }} and name : {{ clickedHero.name | uppercase }}
+<div class="hero-detail" *ngIf="hero">
+  <h5>{{ hero.name }} Details</h5>
+  id : {{ hero.id }} and name : {{ hero.name | uppercase }}
 </div>
 
-<div class="hero-edit" *ngIf="clickedHero">
+<div class="hero-edit" *ngIf="hero">
   <h5>Edit Hero</h5>
   <label for="name">Hero name : </label>
-  <input id="name" [(ngModel)]="clickedHero.name" placeholder="name" />
+  <input id="name" [(ngModel)]="hero.name" placeholder="name" />
   <hr />
 </div>

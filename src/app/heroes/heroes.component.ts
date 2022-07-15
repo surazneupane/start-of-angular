@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroServiceService } from '../hero-service.service';
+import { MessagesService } from '../messages.service';
 import { Hero } from './hero';
 import { HEROES } from './mock-hero';
 
@@ -14,7 +15,7 @@ export class HeroesComponent implements OnInit {
   hreoesArray: Hero[] = [];
   clickedHero ?: Hero;
 
-  constructor(private heroService : HeroServiceService) {
+  constructor(private heroService : HeroServiceService, private messageService: MessagesService) {
 
    }
 
@@ -25,11 +26,6 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void{
     this.heroService.getHeroes().subscribe(heroes => this.hreoesArray = heroes);
     // this.hreoesArray = this.heroService.getHeroes();
-  }
-
-  onClick(hero : Hero)
-  {
-    this.clickedHero = hero;
   }
 
 }

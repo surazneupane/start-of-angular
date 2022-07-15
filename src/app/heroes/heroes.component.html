@@ -2,13 +2,14 @@
 <div class="hero-edit">
   <h5>All Heroes in array</h5>
   <ul>
-    <li *ngFor="let hero of hreoesArray" [class.selected]="hero === clickedHero">
-      <button type="button" (click)="onClick(hero)" [class.selected] = "hero == clickedHero">
+    <li *ngFor="let hero of hreoesArray" >
+      <a routerLink="/detail/{{hero.id}}">
+      <button type="button" >
         id : {{ hero.id }} and Name : {{ hero.name }}
       </button>
+    </a>
     </li>
   </ul>
 </div>
 
 
-<app-hero-detail [clickedHero] = "clickedHero"></app-hero-detail>
